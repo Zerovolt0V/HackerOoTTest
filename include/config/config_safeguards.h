@@ -54,7 +54,7 @@
     #define SHOW_CS_INFOS false
     #define SHOW_INPUT_DISPLAY false
     #define SHOW_TIME_INFOS false
-    #define INCLUDE_TEST_SCENES false
+    #define INCLUDE_TEST_SCENES true
     #define ENABLE_NO_CLIP false
     #define ENABLE_CS_CONTROL false
     #define ENABLE_FRAMERATE_OPTIONS false
@@ -69,7 +69,7 @@
     #define ENABLE_DEBUG_SAVE false
     #define MAP_SELECT_ON_FILE_1 false
     #define ENABLE_DEBUG_HEAP false
-    #define INCLUDE_EXAMPLE_SCENE false
+    #define INCLUDE_EXAMPLE_SCENE true
     #define ENABLE_MOTION_BLUR_DEBUG false
     #define ENABLE_HACKER_DEBUG false
     #define ENABLE_PROFILER false

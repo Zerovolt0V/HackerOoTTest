@@ -19766,6 +19766,7 @@ beginseg
     romalign 0x1000
     include "$(BUILD_DIR)/baserom/softsprite_matrix_static.o"
 endseg
+
 #endif
 
 #if CAN_INCLUDE_EXAMPLE_SCENE
@@ -19788,4 +19789,19 @@ beginseg
     include "$(BUILD_DIR)/assets/scenes/example/example_room_0_model.o"
     number 3
 endseg
+
+beginseg
+	name "newscene_scene"
+	romalign 0x1000
+	include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_scene.o"
+	number 2
+endseg
+
+beginseg
+	name "newscene_room_0"
+	romalign 0x1000
+	include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_room_0.o"
+	number 3
+endseg
+
 #endif
