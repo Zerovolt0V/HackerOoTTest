@@ -1,29 +1,6 @@
 #include "newscene_scene.h"
 
 
-/**
- * Header Child Day (Default)
-*/
-SceneCmd newscene_room_0_header00[] = {
-    SCENE_CMD_ROOM_SHAPE(&newscene_room_0_shapeHeader),
-    SCENE_CMD_ECHO_SETTINGS(0x00),
-    SCENE_CMD_ROOM_BEHAVIOR(0x00, 0x09, true, false),
-    SCENE_CMD_SKYBOX_DISABLES(true, true),
-    SCENE_CMD_TIME_SETTINGS(255, 255, 0),
-    SCENE_CMD_END(),
-};
-
-RoomShapeNormal newscene_room_0_shapeHeader = {
-    ROOM_SHAPE_TYPE_NORMAL,
-    ARRAY_COUNT(newscene_room_0_shapeDListsEntry),
-    newscene_room_0_shapeDListsEntry,
-    newscene_room_0_shapeDListsEntry + ARRAY_COUNT(newscene_room_0_shapeDListsEntry)
-};
-
-RoomShapeDListsEntry newscene_room_0_shapeDListsEntry[1] = {
-    { newscene_room_0_shapeHeader_entry_0_opaque, NULL }
-};
-
 Gfx newscene_room_0_shapeHeader_entry_0_opaque[] = {
 	gsSPDisplayList(newscene_room_0_dl_Render_mesh_layer_Opaque),
 	gsSPEndDisplayList(),
@@ -61,25 +38,52 @@ u64 newscene_room_0_dl_spot00_sceneTex_01AB98_rgba16_pal_rgba16[] = {
 };
 
 Vtx newscene_room_0_dl_Render_mesh_layer_Opaque_vtx_cull[8] = {
-	{{ {-300, -120, 300}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-300, -120, 300}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-300, -120, -300}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {-300, -120, -300}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {300, -120, 300}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {300, -120, 300}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {300, -120, -300}, 0, {0, 0}, {0, 0, 0, 0} }},
-	{{ {300, -120, -300}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-510, -120, 510}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-510, -120, 510}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-510, -120, -510}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {-510, -120, -510}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {710, -120, 510}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {710, -120, 510}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {710, -120, -510}, 0, {0, 0}, {0, 0, 0, 0} }},
+	{{ {710, -120, -510}, 0, {0, 0}, {0, 0, 0, 0} }},
 };
 
-Vtx newscene_room_0_dl_Render_mesh_layer_Opaque_vtx_0[4] = {
-	{{ {-300, -120, 300}, 0, {-1200, 2192}, {0, 127, 0, 255} }},
-	{{ {300, -120, 300}, 0, {2192, 2192}, {0, 127, 0, 255} }},
-	{{ {300, -120, -300}, 0, {2192, -1200}, {0, 127, 0, 255} }},
-	{{ {-300, -120, -300}, 0, {-1200, -1200}, {0, 127, 0, 255} }},
+Vtx newscene_room_0_dl_Render_mesh_layer_Opaque_vtx_0[14] = {
+	{{ {-510, -120, 510}, 0, {-1200, 2192}, {0, 129, 0, 255} }},
+	{{ {-510, -120, -510}, 0, {-1200, -1200}, {0, 129, 0, 255} }},
+	{{ {510, -120, -510}, 0, {2192, -1200}, {0, 129, 0, 255} }},
+	{{ {510, -120, 510}, 0, {2192, 2192}, {0, 129, 0, 255} }},
+	{{ {710, -120, -510}, 0, {2192, -1200}, {0, 129, 0, 255} }},
+	{{ {710, -120, 510}, 0, {2192, 2192}, {0, 129, 0, 255} }},
+	{{ {510, -120, -510}, 0, {2192, -1200}, {0, 127, 0, 255} }},
+	{{ {-510, -120, -510}, 0, {-1200, -1200}, {0, 127, 0, 255} }},
+	{{ {-310, -120, -510}, 0, {-1200, -1200}, {0, 127, 0, 255} }},
+	{{ {710, -120, -510}, 0, {2192, -1200}, {0, 127, 0, 255} }},
+	{{ {-310, -120, 510}, 0, {-1200, 2192}, {0, 127, 0, 255} }},
+	{{ {710, -120, 510}, 0, {2192, 2192}, {0, 127, 0, 255} }},
+	{{ {-510, -120, 510}, 0, {-1200, 2192}, {0, 127, 0, 255} }},
+	{{ {510, -120, 510}, 0, {2192, 2192}, {0, 127, 0, 255} }},
 };
 
 Gfx newscene_room_0_dl_Render_mesh_layer_Opaque_tri_0[] = {
-	gsSPVertex(newscene_room_0_dl_Render_mesh_layer_Opaque_vtx_0 + 0, 4, 0),
+	gsSPVertex(newscene_room_0_dl_Render_mesh_layer_Opaque_vtx_0 + 0, 14, 0),
+	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
+	gsSP2Triangles(3, 2, 4, 0, 3, 4, 5, 0),
+	gsSP2Triangles(6, 7, 8, 0, 6, 8, 9, 0),
+	gsSP2Triangles(10, 9, 8, 0, 10, 11, 9, 0),
+	gsSP2Triangles(12, 11, 10, 0, 12, 13, 11, 0),
+	gsSPEndDisplayList(),
+};
+
+Vtx newscene_room_0_dl_Render_mesh_layer_Opaque_vtx_1[4] = {
+	{{ {-510, -120, -510}, 0x007f, {-1200, -1200}, {255, 255, 255, 255} }},
+	{{ {-510, -120, 510}, 0x007f, {-1200, 2192}, {255, 255, 255, 255} }},
+	{{ {-310, -120, 510}, 0x007f, {-1200, 2192}, {255, 255, 255, 255} }},
+	{{ {-310, -120, -510}, 0x007f, {-1200, -1200}, {255, 255, 255, 255} }},
+};
+
+Gfx newscene_room_0_dl_Render_mesh_layer_Opaque_tri_1[] = {
+	gsSPVertex(newscene_room_0_dl_Render_mesh_layer_Opaque_vtx_1 + 0, 4, 0),
 	gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),
 	gsSPEndDisplayList(),
 };
@@ -103,6 +107,18 @@ Gfx mat_newscene_room_0_dl_floor_mat_layerOpaque[] = {
 	gsSPEndDisplayList(),
 };
 
+Gfx mat_newscene_room_0_dl_f3dlite_material_layerOpaque[] = {
+	gsSPLoadGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_PACKED_NORMALS | G_LIGHTING_SPECULAR | G_FRESNEL_ALPHA | G_LIGHTING | G_SHADING_SMOOTH),
+	gsDPPipeSync(),
+	gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, SHADE, COMBINED, 0, PRIMITIVE, 0, COMBINED, 0, PRIMITIVE, 0),
+	gsSPFresnel(0xff02, 0x00b1),
+	gsSPSetOtherMode(G_SETOTHERMODE_H, 4, 20, G_AD_NOISE | G_CD_MAGICSQ | G_CK_NONE | G_TC_FILT | G_TF_BILERP | G_TT_NONE | G_TL_TILE | G_TD_CLAMP | G_TP_PERSP | G_CYC_2CYCLE | G_PM_NPRIMITIVE),
+	gsSPSetOtherMode(G_SETOTHERMODE_L, 0, 32, G_AC_NONE | G_ZS_PIXEL | G_RM_PASS | G_RM_AA_ZB_OPA_SURF2),
+	gsSPTexture(65535, 65535, 0, 0, 1),
+	gsDPSetPrimColor(0, 0, 255, 255, 255, 255),
+	gsSPEndDisplayList(),
+};
+
 Gfx newscene_room_0_dl_Render_mesh_layer_Opaque[] = {
 	gsSPClearGeometryMode(G_LIGHTING),
 	gsSPVertex(newscene_room_0_dl_Render_mesh_layer_Opaque_vtx_cull + 0, 8, 0),
@@ -110,6 +126,8 @@ Gfx newscene_room_0_dl_Render_mesh_layer_Opaque[] = {
 	gsSPCullDisplayList(0, 7),
 	gsSPDisplayList(mat_newscene_room_0_dl_floor_mat_layerOpaque),
 	gsSPDisplayList(newscene_room_0_dl_Render_mesh_layer_Opaque_tri_0),
+	gsSPDisplayList(mat_newscene_room_0_dl_f3dlite_material_layerOpaque),
+	gsSPDisplayList(newscene_room_0_dl_Render_mesh_layer_Opaque_tri_1),
 	gsSPEndDisplayList(),
 };
 

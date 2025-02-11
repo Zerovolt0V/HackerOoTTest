@@ -12,6 +12,8 @@
         "*.h": "c",
         "*.inc": "c",
         "*.inc.c": "c",
+        "bitset": "c",
+        "functional": "c"
     },
     "editor.rulers": [
         120

@@ -19793,14 +19793,17 @@ endseg
 beginseg
 	name "newscene_scene"
 	romalign 0x1000
-	include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_scene.o"
+	include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_scene_main.o"
+    include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_scene_col.o"
 	number 2
 endseg
 
 beginseg
 	name "newscene_room_0"
 	romalign 0x1000
-	include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_room_0.o"
+	include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_room_0_main.o"
+    include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_room_0_model.o"
+    include "$(BUILD_DIR)/assets/scenes/overworld/newscene/newscene_room_0_model_info.o"
 	number 3
 endseg
 

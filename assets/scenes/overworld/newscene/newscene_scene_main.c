@@ -7,13 +7,14 @@
 SceneCmd newscene_scene_header00[] = {
     SCENE_CMD_COL_HEADER(&newscene_scene_collisionHeader),
     SCENE_CMD_ROOM_LIST(1, newscene_scene_roomList),
-    SCENE_CMD_SOUND_SETTINGS(0x00, 0x13, NA_BGM_APPEAR),
+    SCENE_CMD_SOUND_SETTINGS(0x00, 0x13, NA_BGM_ZELDA_THEME),
     SCENE_CMD_MISC_SETTINGS(0x00, 0x00),
     SCENE_CMD_SPECIAL_FILES(0x00, OBJECT_GAMEPLAY_FIELD_KEEP),
-    SCENE_CMD_SKYBOX_SETTINGS(0x01, 0x01, LIGHT_MODE_TIME),
+    SCENE_CMD_SKYBOX_SETTINGS(0x01, 0x00, LIGHT_MODE_TIME),
     SCENE_CMD_ENV_LIGHT_SETTINGS(4, newscene_scene_header00_lightSettings),
     SCENE_CMD_ENTRANCE_LIST(newscene_scene_header00_entranceList),
     SCENE_CMD_SPAWN_LIST(1, newscene_scene_header00_playerEntryList),
+    SCENE_CMD_EXIT_LIST(newscene_scene_header00_exitList),
     SCENE_CMD_END(),
 };
 
@@ -27,13 +28,17 @@ ActorEntry newscene_scene_header00_playerEntryList[] = {
         /* Actor ID   */ ACTOR_PLAYER,
         /* Position   */ { 0, -120, 0 },
         /* Rotation   */ { DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000), DEG_TO_BINANG(0.000) },
-        /* Parameters */ 0x0200
+        /* Parameters */ 0x02FF
     },
 };
 
 Spawn newscene_scene_header00_entranceList[] = {
     // { Spawn Actor List Index, Room Index }
     { 0, 0 },
+};
+
+u16 newscene_scene_header00_exitList[1] = {
+    ENTR_ROYAL_FAMILYS_TOMB_0,
 };
 
 EnvLightSettings newscene_scene_header00_lightSettings[4] = {
@@ -81,31 +86,5 @@ EnvLightSettings newscene_scene_header00_lightSettings[4] = {
         ((1 << 10) | 992),         // Blend Rate & Fog Near
         12800,                     // Fog Far
     },
-};
-
-CollisionHeader newscene_scene_collisionHeader = {
-    { -300, -121, -300 },
-    { 300, -121, 300 },
-    ARRAY_COUNT(newscene_scene_vertices), newscene_scene_vertices,
-    ARRAY_COUNT(newscene_scene_polygons), newscene_scene_polygons,
-    newscene_scene_polygonTypes,
-    NULL,
-    0, NULL
-};
-
-SurfaceType newscene_scene_polygonTypes[1] = {
-    { SURFACETYPE0(0, 0, 0x00, 0, 0x00, 0x00, 0, 0), SURFACETYPE1(0x00, 0x00, 0, 0, 0, 0, 0, 0) },
-};
-
-Vec3s newscene_scene_vertices[4] = {
-    {   -300,   -121,    300 },
-    {    300,   -121,    300 },
-    {    300,   -121,   -300 },
-    {   -300,   -121,   -300 },
-};
-
-CollisionPoly newscene_scene_polygons[2] = {
-    { 0, COLPOLY_VTX(0, COLPOLY_IGNORE_NONE), COLPOLY_VTX(1, COLPOLY_IGNORE_NONE), COLPOLY_VTX_INDEX(2), { COLPOLY_SNORMAL(0.0), COLPOLY_SNORMAL(1.0), COLPOLY_SNORMAL(7.549790126404332e-08) }, 121 },
-    { 0, COLPOLY_VTX(0, COLPOLY_IGNORE_NONE), COLPOLY_VTX(2, COLPOLY_IGNORE_NONE), COLPOLY_VTX_INDEX(3), { COLPOLY_SNORMAL(0.0), COLPOLY_SNORMAL(1.0), COLPOLY_SNORMAL(7.549790126404332e-08) }, 121 },
 };
 
