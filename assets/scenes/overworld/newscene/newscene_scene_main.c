@@ -9,8 +9,8 @@ SceneCmd newscene_scene_header00[] = {
     SCENE_CMD_ROOM_LIST(1, newscene_scene_roomList),
     SCENE_CMD_SOUND_SETTINGS(0x00, 0x13, NA_BGM_ZELDA_THEME),
     SCENE_CMD_MISC_SETTINGS(0x00, 0x00),
-    SCENE_CMD_SPECIAL_FILES(0x00, OBJECT_GAMEPLAY_FIELD_KEEP),
-    SCENE_CMD_SKYBOX_SETTINGS(0x01, 0x00, LIGHT_MODE_TIME),
+    SCENE_CMD_SPECIAL_FILES(0x00, OBJECT_GAMEPLAY_DANGEON_KEEP),
+    SCENE_CMD_SKYBOX_SETTINGS(0x05, 0x00, LIGHT_MODE_TIME),
     SCENE_CMD_ENV_LIGHT_SETTINGS(4, newscene_scene_header00_lightSettings),
     SCENE_CMD_ENTRANCE_LIST(newscene_scene_header00_entranceList),
     SCENE_CMD_SPAWN_LIST(1, newscene_scene_header00_playerEntryList),
@@ -77,13 +77,13 @@ EnvLightSettings newscene_scene_header00_lightSettings[4] = {
     },
     // Night Lighting
     {
-        {    40,    70,   100 },   // Ambient Color
-        {    73,   -73,    73 },   // Diffuse0 Direction
-        {    20,    20,    35 },   // Diffuse0 Color
+        {   242,   242,   242 },   // Ambient Color
+        {     0,   127,     0 },   // Diffuse0 Direction
+        {   255,   255,   255 },   // Diffuse0 Color
         {   -73,    73,   -73 },   // Diffuse1 Direction
-        {    50,    50,   100 },   // Diffuse1 Color
-        {     0,     0,    30 },   // Fog Color
-        ((1 << 10) | 992),         // Blend Rate & Fog Near
+        {   255,   255,   255 },   // Diffuse1 Color
+        {    99,    99,    99 },   // Fog Color
+        ((1 << 10) | 990),         // Blend Rate & Fog Near
         12800,                     // Fog Far
     },
 };
