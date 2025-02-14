@@ -70,6 +70,11 @@ void BgYdanHasi_Init(Actor* thisx, PlayState* play) {
         this->dyna.bgId = DynaPoly_SetBgActor(play, &play->colCtx.dyna, &this->dyna.actor, colHeader);
     }
     this->timer = 0;
+    //Spawn torch if "new scene"
+    if (play->sceneId == SCENE_FOREST_TEMPLE){
+        Actor_SpawnAsChild(&play->actorCtx, &this->dyna.actor, play, ACTOR_OBJ_SYOKUDAI, this->dyna.actor.world.pos.x, this->dyna.actor.world.pos.y,
+                        this->dyna.actor.world.pos.z, this->dyna.actor.world.rot.x, this->dyna.actor.world.rot.y, this->dyna.actor.world.rot.z, 0x0400);
+    }
 }
 
 void BgYdanHasi_Destroy(Actor* thisx, PlayState* play) {
@@ -167,6 +172,11 @@ void BgYdanHasi_Update(Actor* thisx, PlayState* play) {
     BgYdanHasi* this = (BgYdanHasi*)thisx;
 
     this->actionFunc(this, play);
+
+    //Torch for new scene
+    if ((play->sceneId == SCENE_FOREST_TEMPLE) && this->dyna.actor.child != NULL){
+        this->dyna.actor.child->world.pos = this->dyna.actor.world.pos;
+    }
 }
 
 void BgYdanHasi_Draw(Actor* thisx, PlayState* play) {

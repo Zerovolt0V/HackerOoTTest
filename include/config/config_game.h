@@ -27,13 +27,13 @@
 #define ENABLE_LOW_HEALTH_BEEP true
 
 // Make the Bunny Hood Mask behave like in Majora's Mask where it increases Link's speed when equipped.
-#define MM_BUNNY_HOOD false
+#define MM_BUNNY_HOOD true
 #define MM_BUNNY_HOOD_SPEED 1.5f
 
 /**
  * Enable fast text
  */
-#define ENABLE_FAST_TEXT false
+#define ENABLE_FAST_TEXT true
 
 /**
  * Splits Farore's Wind warp point across ages. One point for child Link, one point for adult Link.

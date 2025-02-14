@@ -240,7 +240,8 @@ void ObjSyokudai_Update(Actor* thisx, PlayState* play2) {
     CollisionCheck_SetAC(play, &play->colChkCtx, &this->colliderFlame.base);
 
     if (this->litTimer > 0) {
-        this->litTimer--;
+        //Find a better solution later, for infinite lit torches once lit
+        //this->litTimer--;
         if ((this->litTimer == 0) && (torchType != 0)) {
             sLitTorchCount--;
         }

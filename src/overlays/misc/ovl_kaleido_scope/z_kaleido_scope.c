@@ -722,7 +722,7 @@ static u16 sPageSwitchNextPageIndex[] = {
 };
 
 u8 gSlotAgeReqs[] = {
-    AGE_REQ_CHILD, // SLOT_DEKU_STICK
+    AGE_REQ_NONE, // SLOT_DEKU_STICK
     AGE_REQ_NONE,  // SLOT_DEKU_NUT
     AGE_REQ_NONE,  // SLOT_BOMB
     AGE_REQ_ADULT, // SLOT_BOW

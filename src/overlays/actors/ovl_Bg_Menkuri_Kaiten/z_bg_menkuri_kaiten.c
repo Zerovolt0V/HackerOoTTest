@@ -49,10 +49,10 @@ void BgMenkuriKaiten_Destroy(Actor* thisx, PlayState* play) {
 
 void BgMenkuriKaiten_Update(Actor* thisx, PlayState* play) {
     BgMenkuriKaiten* this = (BgMenkuriKaiten*)thisx;
-
+        this->dyna.actor.shape.rot.y += 0x80;
     if (!Flags_GetSwitch(play, this->dyna.actor.params) && DynaPolyActor_IsPlayerAbove(&this->dyna)) {
         Actor_PlaySfx_Flagged(&this->dyna.actor, NA_SE_EV_ELEVATOR_MOVE - SFX_FLAG);
-        this->dyna.actor.shape.rot.y += 0x80;
+        //this->dyna.actor.shape.rot.y += 0x80;
     }
 }
 

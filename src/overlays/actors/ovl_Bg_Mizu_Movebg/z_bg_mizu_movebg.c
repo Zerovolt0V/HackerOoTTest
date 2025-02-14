@@ -343,7 +343,7 @@ void BgMizuMovebg_UpdateHookshotPlatform(BgMizuMovebg* this, PlayState* play) {
     f32 dy;
     f32 dz;
 
-    this->dyna.actor.speed = MOVEBG_SPEED(this->dyna.actor.params) * 0.1f;
+    this->dyna.actor.speed = MOVEBG_SPEED(this->dyna.actor.params) * 2.0f;
     BgMizuMovebg_SetPosFromPath(play->pathList, &waypoint, MOVEBG_PATH_ID(this->dyna.actor.params), this->waypointId);
     dist = Actor_WorldDistXYZToPoint(&this->dyna.actor, &waypoint);
     if (dist < this->dyna.actor.speed) {
@@ -367,7 +367,7 @@ void BgMizuMovebg_UpdateHookshotPlatform(BgMizuMovebg* this, PlayState* play) {
         this->sfxFlags |= 1;
     }
     if (this->sfxFlags & 1) {
-        Actor_PlaySfx_FlaggedCentered2(&this->dyna.actor, NA_SE_EV_ROLL_STAND_2 - SFX_FLAG);
+        Actor_PlaySfx(&this->dyna.actor, NA_SE_EV_ROLL_STAND_2 - SFX_FLAG);
     }
 }
 
